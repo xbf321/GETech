@@ -1,0 +1,82 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/templates/BaseMasterPage.master" %>
+
+<script runat="server">
+    protected string menuTree = string.Empty;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        StringBuilder sbTree = new StringBuilder();
+        sbTree.Append(BuildTree(GETech.Data.ProductCategoryManage.GetCategoryForTable(), 0));
+        menuTree = sbTree.ToString();
+    }
+    protected string BuildTree(System.Data.DataTable dt, int parentId)
+    {
+        StringBuilder sb = new StringBuilder();
+        System.Data.DataRow[] drs = dt.Select("ParentId=" + parentId);
+        if (drs.Length > 0)
+        {
+            if (parentId == 0)
+            {
+                sb.Append("<ul id=\"sf-menu\" class=\"sf-menu sf-vertical\">");
+            }
+            else
+            {
+                sb.Append("<ul>");
+            }
+            foreach (System.Data.DataRow r in drs)
+            {
+                sb.Append("<li>");
+
+                string _linkUrl = r["LinkUrl"].ToString();
+                string _url = string.Format("{0}product/category/{1}.aspx", ResolveUrl("~"), r["CategoryId"]);
+                if (!string.IsNullOrEmpty(_linkUrl))
+                {
+                    _url = _linkUrl;
+                }
+                sb.AppendFormat("<a href=\"{0}\">{1}</a>", _url, r["CategoryName"]);
+                sb.Append(BuildTree(dt, Convert.ToInt32(r["CategoryId"])));
+                sb.Append("</li>");
+
+            }
+            sb.Append("</ul>");
+        }
+        return sb.ToString();
+    }
+</script>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <link rel="stylesheet" type="text/css" href="/css/superfish.css" media="screen">
+    <link href="/css/superfish-vertical.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript" src="/js/superfish.js"></script>
+
+    <meta name="keywords" content="无损检测,超声探伤,涡流探伤,射线探伤,测厚仪,硬度计,超声相控阵,脉冲涡流,射线成像,涡流相控阵,电导率检测" />
+    <meta name="description" content="GE的检测科技为各工业领域提供了最全面的无损检测（NDT），远程可视化检测(RVI)以及其他产品的选择。我们的优势在于运用了行业经验以及客户反馈，以此来建立当今市场上最有用的NDT 以及RVI产品。" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cpMainWrapper" runat="Server">
+    <div id="left_column">
+        <ul id="product_Top" class="mT">
+            <li><a href="<%=ResolveUrl("~") %>" class="blueB">首页</a></li>
+            <li class="on"><a href="<%=ResolveUrl("~") %>product/" class="grayB">产品</a></li>
+        </ul>
+        <div id="menuProduct">            
+            <%=menuTree %>
+        </div>
+    </div>
+    <asp:ContentPlaceHolder ID="cpMainWrapper" runat="server">
+    </asp:ContentPlaceHolder>
+    <div class="clear">
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cpFooterScript" runat="Server">
+
+    <script type="text/javascript">
+        jQuery(function() {
+            jQuery('ul.sf-menu').superfish();
+        });
+    </script>
+
+    <asp:ContentPlaceHolder ID="cpFooterScript" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

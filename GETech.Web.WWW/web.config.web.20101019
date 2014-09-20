@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="gb2312"?>
+<configuration>
+  <configSections>
+    <section name="HandlerConfiguration" type="Goodspeed.Library.Configuration.HandlerSection,Goodspeed.Library" />
+  </configSections>
+  <appSettings>
+    <add key="DESKey" value="4D324DF0"/>
+    <add key="DefaultConnectionString" value="ednchina" />
+    <add key="WebSiteTitlePostfix" value="GE检测科技" />
+    <add key="ErrorDirectory" value="F:\Websites\EntSol\www.geinspectiontechnologies.com\cn\ErrorLog\"/>
+  </appSettings>
+  <connectionStrings>
+    <add name="ednchina" connectionString="Server=.;User ID=GETech;Password=J4e87LHwjIKn;Persist Security Info=True;DataBase=GETech;Connect Timeout=300;" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <system.web>
+    <compilation debug="false">
+      <assemblies>
+      </assemblies>
+    </compilation>
+    <!--RemoteOnly
+    <customErrors mode="RemoteOnly" defaultRedirect="error.htm">
+<customErrors mode="Off" defaultRedirect="error.htm">
+    </customErrors>-->
+    <authentication mode="Forms">
+      <forms name=".GE" loginUrl="/pagesadmin/Login.aspx" protection="All" timeout="60" domain="geinspectiontechnologies.cn" />
+    </authentication>
+    <roleManager enabled="true" defaultProvider="SiteRoleProvider" cacheRolesInCookie="true" cookieName=".GEROLES" cookieTimeout="30" cookiePath="/" cookieRequireSSL="false" cookieSlidingExpiration="true" cookieProtection="All">
+      <providers>
+        <add name="SiteRoleProvider" type="Controleng.Core.Provider.SiteRoleProvider,Controleng.Provider" connectionStringName="ednchina" applicationName="ge" />
+      </providers>
+    </roleManager>
+    <siteMap>
+      <providers>
+        <add name="AdminSiteMapProvider"
+            siteMapFile="/pagesadmin/web.sitemap"
+                    type="System.Web.XmlSiteMapProvider, System.Web, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+      </providers>
+    </siteMap>
+    <pages>
+      <controls>
+        <add namespace="Goodspeed.Web.UI.WebControls" tagPrefix="Goodspeed" assembly="Goodspeed.Library" />
+      </controls>
+    </pages>
+
+    <httpHandlers>
+      <remove verb="*" path="*.asmx"/>
+      <add verb="*" path="*.aspx" type="Goodspeed.Web.UrlReWriteHandlerFactory,Goodspeed.Library" />
+    </httpHandlers>
+  </system.web>
+  <HandlerConfiguration>
+    <HttpHandlers>
+      <add pattern="^news/html/([\w|-]+)\.aspx$" redirect="/news/show.aspx" />
+      <add pattern="^product/category/(\d+)\.aspx$" redirect="/product/showcategory.aspx" />
+    </HttpHandlers>
+  </HandlerConfiguration>
+</configuration>

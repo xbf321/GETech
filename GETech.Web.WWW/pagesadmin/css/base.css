@@ -1,0 +1,42 @@
+﻿@charset "utf-8";
+
+/* 公共样式 */
+body {margin:0 auto;width:750px; color:#676767;  font:normal 12px/20px Arial, Helvetica, sans-serif;}
+div,form,ol,span,dl,dt,dd{border:0;margin:0;padding:0;}
+img {border:0; margin:0; padding:0;}
+ul,li,input {padding:0;margin:0;list-style-type: none; line-height:22px;}
+h1,h2,h3,h4,h5,h6,p{margin:0;padding:0;font-size:12px; }
+.i{font-style:normal}
+.clear{clear:both; height:0px; line-height:0px; font-size:0;}
+.clear_b10{clear:both; height:10px; line-height:10px; font-size:0;}
+.main{overflow:hidden; margin-bottom:10px; clear:both;}
+.margin_r10{margin-right:10px; display:inline; clear:both;}
+.mB{margin-bottom:20px;}
+.mT{margin-top:20px;}
+.pt5{padding-top:5px;}
+.pt{padding-top:7px;}
+.pLR{padding:0 10px;}
+.mTB{margin:7px 0;}
+.floatL{float:left;}
+.floatR{float:right;}
+.Mediation{ text-align:center;}
+
+.Fblue{color:#3A73B8;}
+.blue{color:#3b73b9;}
+.red{color:#f00;}
+.blue14B{font-size:14px;color:#3b73b9; font-weight:bold;}
+.blackB{color:#333; font-weight:bold;}
+
+a,a:visited{color:#666; text-decoration:none; font-size:12px;}
+a:hover{text-decoration:underline;}
+
+.blue,.blue:visited{color:#3A73B8; text-decoration:none;}
+.blue:hover{text-decoration:underline;}
+
+.black,.black:visited{color:#000; }
+.black:hover{text-decoration:underline;}
+
+.blueB,.blueB:visited{color:#3A73B8; text-decoration:none; font-weight:bold;}
+.blueB:hover{text-decoration:underline;}
+
+.grayB,grayB:visited{ font-weight:bold;}

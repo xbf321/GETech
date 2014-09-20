@@ -1,0 +1,28 @@
+﻿@charset "utf-8";
+
+/* 登录样式 */
+body {margin:0 auto;width:100%; color:#676767;  font:normal 12px/20px Arial, Helvetica, sans-serif; text-align:center;}
+#loginBar{width:490px; height:280px; margin-top:50px; border:1px #ccc solid; padding:50px 60px; background:#fff;}
+.loginTitle{text-align:center; padding-bottom:20px; border-bottom:1px #ccc solid; margin-bottom:20px;}
+.loginUser{ height:160px; background:url(../images/loginPic.gif) no-repeat 80px center; padding-left:240px;}
+.loginUser li{ margin-bottom:20px; text-align:left;}
+.loginInput{border:1px #84a2bc solid; height:18px; line-height:18px;}
+
+
+.main_Login{width:994px; margin:0 auto;}
+#Litop li{float:left;}
+#Litop{height:68px;}
+#Litop .l{width:327px; height:68px; float:left; background:url(../images/LitopL.gif) no-repeat left top;}
+#Litop .R{width:667px; height:68px; float:left; background:url(../images/LitopR.gif) no-repeat left top;}
+.LiContentL{width:187px; height:697px; text-align:left; float:left; color:#44677b; background:#fff; border:1px #b6c0c9 solid; border-top:0;}
+.LsortBar{border-top:1px #b7c1ca solid;}
+.LsortBar h2{ height:26px; line-height:26px; background:url(../images/LsortBg.gif) no-repeat left center; text-indent:46px; margin:10px 0;}
+.LsortBar p{ padding-left:45px; padding-bottom:10px;}
+.Limanager{padding-left:45px; margin:10px 0;}
+
+.LiContentR{ width:798px; float:right;text-align:left; }
+.LiCtitle{height:27px; line-height:27px; padding-left:15px; background:url(../images/LiLtitleR.gif) repeat-x; border:1px #b5bfc8 solid;}
+.LiCcontent{background:#fff; border:1px #b6c0c9 solid; border-top:0; padding-left:15px;}
+.LiCcontent td{line-height:26px; border-bottom:1px #ccc solid;}
+
+#footBar{ height:32px; line-height:32px; text-align:center; background:url(../images/Lifoot.gif) repeat-x;}

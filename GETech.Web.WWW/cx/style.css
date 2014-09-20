@@ -1,0 +1,42 @@
+/* CSS Document */
+body{margin:0 auto;width:980px;}
+p,h2{margin:0;padding:0;}
+.tiao{width:980px;height:13px;background:#91a1d4;}
+.login{background:#fff;width:980px;border-bottom:1px solid #CCCCCC;}
+.login img{margin-left:12px;}
+.container{width:980px;background:url(images/bj.jpg) repeat-x;}
+.container p{font-size:20px;color:#fff;font-family:"ººÒÇÖÐÔ²¼ò";line-height:30px;padding:5px 35px;letter-spacing:0.1em;}
+.container h2{text-align:center;padding-top:8px;color:#fff;}
+.container2{width:980px;background:#316db5;}
+.container2 p{font-size:20px;color:#fff;font-family:"ººÒÇÖÐÔ²¼ò";line-height:30px;padding:5px 35px;letter-spacing:0.1em;}
+.container2 h2{text-align:center;padding-top:8px;color:#fff;}
+.container2 a{color:#fff;text-decoration:none;}
+.container2 a:hover{text-decoration:underline;color:#f8981d;}
+.date{font-size:14px;}
+.Answer{width:980px;height:auto;background:#316db5;color:#fff;font-family:"ººÒÇÖÐÔ²¼ò";font-size:16px;padding-top:8px;}
+.column{width:980px;height:auto;background:#3674b9;}
+.content {background:#fff;}
+.content h2{color:#711371;text-align:center;padding:12px 0;}
+.content p{font-size:20px;font-family:"ººÒÇÖÐÔ²¼ò";line-height:30px;padding:5px 35px;letter-spacing:0.1em;}
+.xinxi {background:#fff;}
+.xinxi p{padding-left:35px;padding-bottom:8px;padding-top:12px;font-family:"ººÒÇÖÐÔ²¼ò";color:#711371;font-size:18px;}
+.content2 {background:#fff;}
+.content2 h2{color:#f8981d;text-align:center;padding:12px 0;}
+.content2 p{font-size:20px;font-family:"ººÒÇÖÐÔ²¼ò";line-height:30px;padding:5px 35px;letter-spacing:0.1em;}
+.xinxi2 {background:#fff;}
+.xinxi2 p{padding-left:35px;padding-bottom:8px;padding-top:12px;font-family:"ººÒÇÖÐÔ²¼ò";color:#f8981d;font-size:18px;}
+
+/* µ¯³ö¿òµÄÑùÊ½ */
+.box{width:600px;height:380px;background:#aaccf6;font-family:"ººÒÇÖÐÔ²¼ò";}
+.box p{padding:5px 20px;line-height:24px;color:#000;font-family:"ººÒÇÖÐÔ²¼ò";}
+
+
+
+
+
+
+
+
+
+
+.bottom{background:#3674b9;line-height:22px;text-align:center;font-size:14px;color:#fff;font-family:Arial, Helvetica, sans-serif;}

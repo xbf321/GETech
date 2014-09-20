@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<script runat="server">
+
+</script>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="css/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+
+    <script src="js/jquery-1.4.4.min.js" type="text/javascript"></script>
+
+    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="wrapper">
+        <div class="login">
+            <img src="images/logo.jpg" /></div>
+        <asp:ContentPlaceHolder ID="Main" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

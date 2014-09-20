@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <appSettings>
+    <add key="DefaultConnectionString" value="default" />
+  </appSettings>
+  <connectionStrings>
+    <add name="default" connectionString="Server=.;User ID=GETech;Password=J4e87LHwjIKn;Persist Security Info=True;DataBase=GETech;Connect Timeout=300;" providerName="System.Data.SqlClient" />
+  </connectionStrings>
+  <system.web>
+    <!--RemoteOnly
+    <customErrors mode="RemoteOnly" defaultRedirect="error.htm">
+    </customErrors>-->
+  </system.web>
+</configuration>

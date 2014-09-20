@@ -1,0 +1,50 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "GETech.Web.WWW", "GETech.Web.WWW\", "{DC81FB23-373D-4E07-81AB-36EBC02F53E7}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/GETech.Web.WWW"
+		Debug.AspNetCompiler.PhysicalPath = "E:\Project\GETech\GETech.Web.WWW\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\GETech.Web.WWW\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/GETech.Web.WWW"
+		Release.AspNetCompiler.PhysicalPath = "E:\Project\GETech\GETech.Web.WWW\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\GETech.Web.WWW\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "27004"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GETech.Core", "GETech.Core\GETech.Core.csproj", "{766D2748-F4E9-494F-9C8C-36465A7C1310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controleng.Provider", "Controleng.Provider\Controleng.Provider.csproj", "{C31347EB-2240-4ADF-8BDD-BDA104A96864}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DC81FB23-373D-4E07-81AB-36EBC02F53E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC81FB23-373D-4E07-81AB-36EBC02F53E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC81FB23-373D-4E07-81AB-36EBC02F53E7}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC81FB23-373D-4E07-81AB-36EBC02F53E7}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{766D2748-F4E9-494F-9C8C-36465A7C1310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{766D2748-F4E9-494F-9C8C-36465A7C1310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{766D2748-F4E9-494F-9C8C-36465A7C1310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{766D2748-F4E9-494F-9C8C-36465A7C1310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C31347EB-2240-4ADF-8BDD-BDA104A96864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C31347EB-2240-4ADF-8BDD-BDA104A96864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C31347EB-2240-4ADF-8BDD-BDA104A96864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C31347EB-2240-4ADF-8BDD-BDA104A96864}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

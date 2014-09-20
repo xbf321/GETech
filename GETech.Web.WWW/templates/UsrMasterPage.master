@@ -1,0 +1,39 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/templates/BaseMasterPage.master" %>
+
+<script runat="server">
+    protected override void OnInit(EventArgs e)
+    {
+        base.OnInit(e);
+        if (Request.IsAuthenticated)
+        {
+            if (!HttpContext.Current.User.IsInRole("SiteMember"))
+            {
+                Response.Redirect("/login.aspx");
+            }
+        }
+        else
+        {
+            Response.Redirect("/login.aspx");
+        }
+    }
+</script>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <style type="text/css">
+        .usr-nav{height:26px;padding-left:10px; margin-bottom:10px;border-bottom:1px solid #BDBCBD;}
+        .usr-nav ul{}
+        .usr-nav ul li{width:70px; height:25px; line-height:25px; float:left; margin-left:5px; text-align:center; display:inline;  border:1px #BDBCBD solid; border-bottom:0;}
+        .usr-nav ul li.on{background:#fff; color:#006097;height:26px;font-weight:bold;}
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cpMainWrapper" Runat="Server">
+    <asp:ContentPlaceHolder ID="cpMainWrapper" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cpFooterScript" Runat="Server">
+    <asp:ContentPlaceHolder ID="cpFooterScript" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+

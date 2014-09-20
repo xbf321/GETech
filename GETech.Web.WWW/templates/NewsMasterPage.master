@@ -1,0 +1,35 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/templates/BaseMasterPage.master" %>
+
+<script runat="server">
+
+</script>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cpMainWrapper" runat="Server">
+    <div class="main">
+        <div id="left_column">
+            <ul id="product_Top" class="mT">
+                <li><a href="/" class="blueB">首页</a></li>
+                <li><a href="/news/" class="blueB">关于GE检测科技</a></li>
+                <li class="on"><a href="/news/" class="grayB">新闻中心</a></li>
+            </ul>
+            <ul id="product_sort3">
+                <li><a href="/news/list.aspx" class="blue">新闻发布</a></li>
+                <li><a href="/aboutusCn/press.htm" class="blue">媒体联系</a></li>
+                <li><a href="/aboutusCn/testimonials.htm" class="blue">顾客评价</a></li>
+				<li><a href="/feedback.aspx" class="blue">在线反馈</a></li>
+            </ul>
+        </div>
+        <asp:ContentPlaceHolder ID="cpMainWrapper" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="clear">
+        </div>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cpFooterScript" runat="Server">
+    <asp:ContentPlaceHolder ID="cpFooterScript" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>

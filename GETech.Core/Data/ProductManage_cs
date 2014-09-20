@@ -1,0 +1,60 @@
+﻿using System;
+using System.Data;
+using System.Data.SqlClient;
+
+using GETech.Entity;
+
+namespace GETech.Data
+{
+    public class ProductManage
+    {
+        public static int Update(ProductInfo model) {
+            SqlParameter[] parms = { 
+                                    new SqlParameter("ProductId",SqlDbType.Int),
+                                    new SqlParameter("CategoryId",SqlDbType.Int),
+                                    new SqlParameter("Title",SqlDbType.VarChar),
+                                    new SqlParameter("Content",SqlDbType.VarChar)
+                                   };
+            parms[0].Value = model.ProductId;
+            parms[1].Value = model.CategoryId;
+            parms[2].Value = model.Title;
+            parms[3].Value = model.Content;
+            if (model.ProductId != 0)
+            {
+                //Update
+                string strSQL = "UPDATE Products SET CategoryId = @CategoryId,Title = @Title,Content = @Content WHERE ProductId = @ProductId";
+                Goodspeed.Library.Data.SQLPlus.ExecuteNonQuery(CommandType.Text,strSQL,parms);
+            }
+            else { 
+                //Add
+                string strSQL = "INSERT INTO Products(CategoryId,Title,Content,CreateDateTime) VALUES(@CategoryId,@Title,@Content,GETDATE());SELECT @@IDENTITY;";
+                model.ProductId = Convert.ToInt32(Goodspeed.Library.Data.SQLPlus.ExecuteScalar(CommandType.Text,strSQL,parms));
+            }
+            return model.ProductId;
+        }
+        public static int Delete(int productId) {
+            string strSQL = "DELETE Products WHERE ProductId = @ProductId";
+            SqlParameter parm = new SqlParameter("ProductId", productId);
+
+            return Goodspeed.Library.Data.SQLPlus.ExecuteNonQuery(CommandType.Text,strSQL,parm);
+        }
+        public static ProductInfo GetProductInfoByProductId(int productId) {
+            string strSQL = "SELECT * FROM Products WHERE ProductId = @ProductId ";
+            SqlParameter parm = new SqlParameter("ProductId",productId);
+            DataRow dr = Goodspeed.Library.Data.SQLPlus.ExecuteDataRow(CommandType.Text,strSQL,parm);
+            return GetProductInfoByDataRow(dr) ;
+        }
+        public static ProductInfo GetProductInfoByDataRow(DataRow dr) {
+            ProductInfo model = null;
+            if(dr != null){
+                model = new ProductInfo();
+                model.CategoryId = dr.Field<int>("CategoryId");
+                model.Content = dr.Field<string>("Content");
+                model.CreateDateTime = dr.Field<DateTime>("CreateDateTime");
+                model.ProductId = dr.Field<int>("ProductId");
+                model.Title = dr.Field<string>("Title");
+            }
+            return model;
+        }
+    }
+}

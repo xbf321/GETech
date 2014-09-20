@@ -1,0 +1,67 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/templates/EmptyMasterPageWithoutForm.master" %>
+
+<script runat="server">
+    protected void Page_Load()
+    {
+        if (Request.IsAuthenticated)
+        {
+            GETech.Entity.SiteMember sm = new GETech.Entity.SiteMember(HttpContext.Current.User.Identity.Name);
+            if (!sm.IsPass || !Roles.IsUserInRole("Admin"))
+            {
+                Response.Redirect("login.aspx");
+            }
+        }
+    }
+</script>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <style type="text/css">
+        body
+        {
+            font-size: 12px;
+        }
+        img
+        {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+        fieldset
+        {
+            padding: 2px;
+        }
+        #content_block
+        {
+        }
+        #top_nav_block
+        {
+            height: 27px;
+            line-height: 27px;
+            padding-left: 5px;
+            margin-top: 10px;
+            background: url(../images/LiLtitleR.gif) repeat-x;
+            border: 1px #b5bfc8 solid;
+        }
+        #content_block td
+        {
+            line-height: 20px;
+            /*border-bottom: 1px #ccc solid;*/
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cpMainWrapper" runat="Server">
+    <div id="top_nav_block">
+        当前位置：<asp:SiteMapPath runat="server" SiteMapProvider="AdminSiteMapProvider">
+        </asp:SiteMapPath>
+    </div>
+    <div id="content_block">
+        <asp:ContentPlaceHolder ID="cpMainWrapper" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cpFooterScript" runat="Server">
+    <asp:ContentPlaceHolder ID="cpFooterScript" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
